@@ -2,12 +2,23 @@ name: Test My Reusable Workflow
 on: push
 
 jobs:
-  test:
+  reusable_workflow_job:
     runs-on: ubuntu-latest
+    environment: production
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - uses: CICD-test-nable/JAVA_SAMPLE_SPRING/.github/workflows/main.yml@master
+      # with:
+      #   repo-token: ${{ secrets.envPAT }}
+      #   configuration-path: ${{ inputs.config-path }}
 
-      # Use the reusable workflow from repository A
-      - name: Use Reusable Workflow from A
-        uses: CICD-test-nable/JAVA_SAMPLE_SPRING/.github/workflows/main.yml@master
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       # Use the reusable workflow from repository A
+#       - name: Use Reusable Workflow from A
+#         uses: CICD-test-nable/JAVA_SAMPLE_SPRING/.github/workflows/main.yml@master
