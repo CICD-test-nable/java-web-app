@@ -4,11 +4,5 @@ on: push
 jobs:
   call-workflow-1-in-local-repo:
     uses: CICD-test-nable/JAVA_SAMPLE_SPRING/.github/workflows/main.yml@master
-
-  # reusable_workflow:
-  #   runs-on: ubuntu-latest
-  #   needs: reusable_workflow_job
-  #   steps:
-  #     - name: Use Another Workflow
-  #       uses: CICD-test-nable/JAVA_SAMPLE_SPRING/.github/workflows/main.yml@master
-
+    secrets:
+      envPAT: ${{ secrets.SONAR_HOST_URL }}
