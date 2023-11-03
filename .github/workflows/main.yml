@@ -5,5 +5,5 @@ jobs:
   call-workflow-1-in-local-repo:
     uses: CICD-test-nable/JAVA_SAMPLE_SPRING/.github/workflows/main.yml@master
     secrets:
-      # SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
